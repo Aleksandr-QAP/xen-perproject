@@ -61,7 +61,7 @@ export default class {
     app.hooks.on('start', async () => {
       if (!(await this._users.exists())) {
         const key = 'vm-data/admin-account'
-        const { email = 'admin@admin.net', password = 'admin' } = await XenStore.read(key)
+        const { email = 'admin', password = 'admin' } = await XenStore.read(key)
           .then(JSON.parse)
           .catch(() => ({}))
 
